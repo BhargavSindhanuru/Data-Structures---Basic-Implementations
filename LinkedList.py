@@ -26,6 +26,19 @@ class LinkedList():
                 lst.append(current.value)
         return lst
 
+    def elementAtIndex(self,i):
+        # Zero-indexed; negative indices not supported
+        ind = 0
+        current = self.head
+        while current:
+            if i == ind:
+                return current.value
+            current = current.next
+            ind += 1
+        return None
+
+
+
 '''
 a = Element(5)
 b = Element(10)
@@ -35,4 +48,5 @@ ll.append(b)
 ll.append(c)
 
 print(ll.convertToList())
-'''
+print(ll.elementAtIndex(2))
+print(ll.elementAtIndex(-1))'''
