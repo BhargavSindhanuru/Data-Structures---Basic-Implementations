@@ -38,7 +38,7 @@ class LinkedList():
         return None
 
     def insert(self, new_element, i):
-        # Returns 1 for success, -1 for failure
+        # Returns 1 for success, -1 if not possible
         if self.head:
             if i == 0:
                 new_element.next = self.head
@@ -59,6 +59,20 @@ class LinkedList():
             return 1
         return -1
 
+    def deleteFirstOccurrence(self, value):
+        current = self.head
+        previous = None
+        while current.value != value and current.next:
+            previous = current
+            current = current.next
+        if current.value == value:
+            if previous:
+                previous.next = current.next
+            else:
+                self.head = current.next
+
+
+
 
 '''
 a = Element(5)
@@ -69,5 +83,5 @@ ll.append(b)
 ll.append(c)
 
 print(ll.convertToList())
-print(ll.insert(Element(6),2))
+ll.deleteFirstOccurrence(10)
 print(ll.convertToList())'''
