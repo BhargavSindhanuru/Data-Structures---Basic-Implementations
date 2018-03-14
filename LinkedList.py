@@ -70,18 +70,3 @@ class LinkedList():
                 previous.next = current.next
             else:
                 self.head = current.next
-
-
-
-
-'''
-a = Element(5)
-b = Element(10)
-c = Element(3)
-ll = LinkedList(a)
-ll.append(b)
-ll.append(c)
-
-print(ll.convertToList())
-ll.deleteFirstOccurrence(10)
-print(ll.convertToList())'''
