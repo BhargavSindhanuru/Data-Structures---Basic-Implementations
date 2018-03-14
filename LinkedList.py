@@ -16,5 +16,23 @@ class LinkedList():
         else:
             self.head = new_element
 
+    def convertToList(self):
+        lst = []
+        current = self.head
+        if self.head:
+            lst.append(current.value)
+            while current.next:
+                current = current.next
+                lst.append(current.value)
+        return lst
 
+'''
+a = Element(5)
+b = Element(10)
+c = Element(3)
+ll = LinkedList(a)
+ll.append(b)
+ll.append(c)
 
+print(ll.convertToList())
+'''
