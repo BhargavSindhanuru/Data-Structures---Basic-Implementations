@@ -37,6 +37,27 @@ class LinkedList():
             ind += 1
         return None
 
+    def insert(self, new_element, i):
+        # Returns 1 for success, -1 for failure
+        if self.head:
+            if i == 0:
+                new_element.next = self.head
+                self.head = new_element
+                return 1
+            else:
+                ind = 0
+                current = self.head
+                while current:
+                    if i == ind + 1:
+                        new_element.next = current.next
+                        current.next = new_element
+                        return 1
+                    ind += 1
+                    current = current.next
+        elif i == 0:
+            self.head = new_element
+            return 1
+        return -1
 
 
 '''
@@ -48,5 +69,5 @@ ll.append(b)
 ll.append(c)
 
 print(ll.convertToList())
-print(ll.elementAtIndex(2))
-print(ll.elementAtIndex(-1))'''
+print(ll.insert(Element(6),2))
+print(ll.convertToList())'''
