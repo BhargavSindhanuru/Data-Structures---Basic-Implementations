@@ -13,3 +13,8 @@ class Graph:
     def __init__(self, nodes=[], edges=[]):
         self.nodes = nodes
         self.edges = edges
+
+    def insertNode(self, newNodeValue):
+        newNode = Node(newNodeValue)
+        self.nodes.append(newNode)
+
